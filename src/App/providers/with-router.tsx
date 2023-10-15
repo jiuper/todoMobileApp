@@ -1,7 +1,9 @@
 import { Suspense } from "react";
-import { BrowserRouter } from "react-router-dom";
-import { IonApp, IonRouterOutlet, setupIonicReact } from "@ionic/react";
+import { Provider } from "react-redux";
+import { IonApp, setupIonicReact } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
+
+import { setupStore } from "../../shared/lib/module/store";
 
 import "@ionic/react/css/core.css";
 import "@ionic/react/css/normalize.css";
@@ -14,15 +16,15 @@ import "@ionic/react/css/text-transformation.css";
 import "@ionic/react/css/flex-utils.css";
 import "@ionic/react/css/display.css";
 
-setupIonicReact();
+const store = setupStore();
+setupIonicReact({ mode: "md" });
+
 export const withRouter = (component: () => JSX.Element) => (
-    <IonApp>
-        <IonReactRouter>
-            <IonRouterOutlet>
-                <BrowserRouter>
-                    <Suspense fallback="Loader...">{component()}</Suspense>
-                </BrowserRouter>
-            </IonRouterOutlet>
-        </IonReactRouter>
-    </IonApp>
+    <Provider store={store}>
+        <IonApp>
+            <IonReactRouter>
+                <Suspense fallback="Loader...">{component()}</Suspense>
+            </IonReactRouter>
+        </IonApp>
+    </Provider>
 );

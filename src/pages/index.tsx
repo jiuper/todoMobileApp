@@ -1,3 +1,5 @@
+import { TabsRouting } from "../features/TabsRouting/ui/TabsRouting";
+
 export const Routing = () => {
-    return <div>asd</div>;
+    return <TabsRouting />;
 };
