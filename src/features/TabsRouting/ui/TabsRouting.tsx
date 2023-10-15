@@ -1,22 +1,25 @@
-import React from "react";
 import { Redirect } from "react-router";
 import { Route } from "react-router-dom";
 import { IonFab, IonFabButton, IonIcon, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs } from "@ionic/react";
 import cnBind from "classnames/bind";
 import { add, calendarOutline, documentTextOutline, homeOutline, peopleOutline } from "ionicons/icons";
 
-import { Projects } from "../../../pages/Projects/Projects";
+import { Home } from "../../../pages/Home/Home";
 import { Tasks } from "../../../pages/Tasks/Tasks";
 import { ROUTES } from "../../../shared/const/Routes";
+import { isOpen } from "../../../shared/lib/module/reducers/generalReducer";
+import { useHookDispatch } from "../../../shared/lib/module/store/configStore";
 
 import styles from "./TabsRouting.module.scss";
 
 const cx = cnBind.bind(styles);
 export const TabsRouting = () => {
-    const IonListFabBtn: { icon: string; href?: string }[] = [
-        { icon: homeOutline, href: ROUTES.HOME },
+    const dispatch = useHookDispatch();
+    const handleIsOpenModal = () => dispatch(isOpen());
+    const IonListFabBtn: { icon: string; href?: string; tab?: string }[] = [
+        { icon: homeOutline, href: ROUTES.HOME, tab: "home" },
         { icon: calendarOutline },
-        { icon: documentTextOutline, href: ROUTES.TASKS },
+        { icon: documentTextOutline, href: ROUTES.TASKS, tab: "tasks" },
         { icon: peopleOutline },
     ];
 
@@ -25,23 +28,25 @@ export const TabsRouting = () => {
             <IonTabs>
                 <IonRouterOutlet>
                     <Redirect exact from="/" to={ROUTES.HOME} />
-                    <Route path={ROUTES.HOME}>
-                        <Projects />
-                    </Route>
-                    <Route path={ROUTES.TASKS}>
-                        <Tasks />
-                    </Route>
+                    <Route path={ROUTES.HOME} render={() => <Home />} exact />
+                    <Route path={ROUTES.TASKS} render={() => <Tasks />} exact />
                 </IonRouterOutlet>
+
                 <IonTabBar className={cx("tabs")} slot="bottom">
-                    {IonListFabBtn.map((btn, i) => (
-                        <IonTabButton layout="icon-start" tab={`tab${i + 1}`} key={btn.icon} href={btn.href}>
+                    {IonListFabBtn.map((btn) => (
+                        <IonTabButton
+                            style={{ background: "transparent" }}
+                            href={btn.href}
+                            key={btn.icon}
+                            tab={btn.tab}
+                        >
                             <IonIcon icon={btn.icon} />
                         </IonTabButton>
                     ))}
                 </IonTabBar>
             </IonTabs>
             <IonFab className={cx("tab-action")} vertical="bottom" horizontal="center" slot="fixed">
-                <IonFabButton id="open-modal" className={cx("tab")}>
+                <IonFabButton onClick={handleIsOpenModal} className={cx("tab")}>
                     <IonIcon icon={add} />
                 </IonFabButton>
             </IonFab>

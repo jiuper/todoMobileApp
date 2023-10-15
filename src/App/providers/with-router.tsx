@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 import { IonApp, setupIonicReact } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 
-import { setupStore } from "../../shared/lib/module/store";
+import { setupStore } from "../../shared/lib/module/store/store";
 
 import "@ionic/react/css/core.css";
 import "@ionic/react/css/normalize.css";

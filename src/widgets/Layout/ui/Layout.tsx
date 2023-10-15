@@ -1,5 +1,6 @@
 import { useLocation } from "react-router";
 
+import { ROUTES } from "../../../shared/const/Routes";
 import { Header } from "../../Header/ui/Header";
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
@@ -7,7 +8,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
 
     return (
         <div className="wrapper">
-            <Header title={url.pathname === "/" ? "Project" : "Tasks"} />
+            <Header title={url.pathname === ROUTES.HOME ? "Home" : "Tasks"} />
             {children}
         </div>
     );

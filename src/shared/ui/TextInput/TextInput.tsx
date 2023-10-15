@@ -4,7 +4,7 @@ import type { ITextInputType } from "./TextInput.type";
 
 export const TextInput = ({
     placeholder,
-    label = "",
+    label = " ",
     labelPlacement,
     onBlur = () => {},
     type = "text",
@@ -29,6 +29,7 @@ export const TextInput = ({
                 name={name}
                 required={required}
                 multiple={multiple}
+                style={{ "--padding-start": "16px" }}
             />
         </IonItem>
     );

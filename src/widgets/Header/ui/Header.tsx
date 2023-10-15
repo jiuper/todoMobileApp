@@ -12,8 +12,7 @@ export const Header = ({ title }: { title: string }) => {
                         <IonBackButton defaultHref={ROUTES.HOME} text="" icon={arrowBackOutline} />
                     </IonButtons>
                 )}
-                <IonTitle
-                > {title}</IonTitle>
+                <IonTitle> {title}</IonTitle>
             </IonToolbar>
         </IonHeader>
     );
