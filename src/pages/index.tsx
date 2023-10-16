@@ -1,5 +1,3 @@
-import React from "react";
-
 import { TabsRouting } from "../features/TabsRouting/ui/TabsRouting";
 
 export const Routing = () => {
