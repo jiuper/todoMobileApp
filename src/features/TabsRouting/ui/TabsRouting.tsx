@@ -16,7 +16,7 @@ import "./TabsRouting.module.scss";
 export const TabsRouting = () => {
     const dispatch = useHookDispatch();
     const handleIsOpenModal = () => dispatch(isOpen());
-    const IonListFabBtn: { icon: string; href?: string; tab?: string }[] = [
+    const IonListFabBtn: { icon: string; href: string; tab: string }[] = [
         { icon: homeOutline, href: ROUTES.HOME, tab: "home" },
         { icon: calendarOutline, href: ROUTES.CALENDAR, tab: "calendar" },
         { icon: documentTextOutline, href: ROUTES.TASKS, tab: "tasks" },

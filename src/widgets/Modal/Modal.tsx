@@ -1,10 +1,16 @@
-import React, { useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { useLocation } from "react-router";
-import { IonButton, IonButtons, IonContent, IonHeader, IonModal, IonTitle, IonToolbar } from "@ionic/react";
+import { IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonModal, IonTitle, IonToolbar } from "@ionic/react";
+import cnBind from "classnames/bind";
 
+import AL from "../../shared/assets/icons/ArrowLeft.svg";
 import { ROUTES } from "../../shared/const/Routes";
 import { isOpen } from "../../shared/lib/module/reducers/generalReducer";
 import { useHookDispatch, useHookSelector } from "../../shared/lib/module/store/configStore";
+
+import styles from "./style.module.scss";
+
+const cx = cnBind.bind(styles);
 
 export const Modal = ({ children }: { children: React.ReactNode }) => {
     const dispatch = useHookDispatch();
@@ -23,12 +29,15 @@ export const Modal = ({ children }: { children: React.ReactNode }) => {
 
     return (
         <IonModal ref={modal} isOpen={isOpenModal}>
-            <IonHeader>
+            <IonHeader className={cx("", "ion-no-border")}>
                 <IonToolbar>
                     <IonButtons slot="start">
-                        <IonButton onClick={handleIsCloseModal}>Cancel</IonButton>
+                        <IonButton onClick={handleIsCloseModal}>
+                            <IonIcon icon={AL} />
+                        </IonButton>
                     </IonButtons>
-                    <IonTitle>{title}</IonTitle>
+                    <IonTitle slot="secondary">{title}</IonTitle>
+                    <IonTitle style={{ opacity: 0 }} slot="primary" />
                 </IonToolbar>
             </IonHeader>
             <IonContent className="ion-padding">{children}</IonContent>
