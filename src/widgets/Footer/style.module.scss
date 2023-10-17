@@ -1,0 +1,22 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+
+  &-container {
+    background: rgba(237, 232, 255, 1);
+    border-top: 0.5px solid #9b9b9b3d;
+    min-height: 50px;
+    height: 100%;
+    display: flex;
+    border-radius: 20px 20px 0 0;
+    align-items: center;
+  }
+
+}
+
+.footer-md{
+  max-height: 70px;
+  width: 100%;
+
+}
+

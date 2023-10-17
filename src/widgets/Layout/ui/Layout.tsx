@@ -1,15 +1,14 @@
-import { useLocation } from "react-router";
-
-import { ROUTES } from "../../../shared/const/Routes";
+import { Footer } from "../../Footer/Footer";
 import { Header } from "../../Header/ui/Header";
 
-export const Layout = ({ children }: { children: React.ReactNode }) => {
-    const url = useLocation();
+import "./Layout.module.scss";
 
+export const Layout = ({ children }: { children: React.ReactNode }) => {
     return (
         <div className="wrapper">
-            <Header title={url.pathname === ROUTES.HOME ? "Home" : "Tasks"} />
-            {children}
+            <Header />
+            <div className="container">{children}</div>
+            <Footer />
         </div>
     );
 };

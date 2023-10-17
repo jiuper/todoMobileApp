@@ -1,9 +1,15 @@
 .wrapper {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
+    position: relative;
+    background: center / cover no-repeat url("../../src/shared/assets/images/bg.png");
 }
 
-body {
-    background-color: #fff;
+.container{
+    max-width: 767px;
+    width: 100%;
+    flex: 1 0 auto;
+    margin: 0 auto;
+    padding: 0 15px;
 }

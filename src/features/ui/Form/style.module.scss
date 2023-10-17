@@ -1,0 +1,24 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  ion-input {
+    --padding-start: 16px !important;
+    border-radius: 15px;
+    background: #fff;
+    min-height: 63px;
+    box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, 0.04);
+    --highlight-color-focused: none;
+  }
+
+  ion-textarea {
+    min-height: 142px;
+    box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, 0.04);
+    --padding-start: 16px;
+    --padding-end: 16px;
+    border-radius: 15px;
+    background: #fff;
+    --highlight-color-focused: none;
+  }
+}

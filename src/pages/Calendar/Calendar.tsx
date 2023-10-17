@@ -1,9 +1,9 @@
-import { IonContent, IonPage } from "@ionic/react";
+import { GeneralPageLayout } from "../../widgets/GeneralPageLayout/GeneralPageLayout";
 
 export const Calendar = () => {
     return (
-        <IonPage>
-            <IonContent>kek</IonContent>
-        </IonPage>
+        <GeneralPageLayout>
+            <div>Calendar</div>
+        </GeneralPageLayout>
     );
 };

@@ -1,6 +1,8 @@
-import { IonInput, IonItem } from "@ionic/react";
+import { IonInput } from "@ionic/react";
 
 import type { ITextInputType } from "./TextInput.type";
+
+import "./style.module.scss";
 
 export const TextInput = ({
     placeholder,
@@ -9,28 +11,25 @@ export const TextInput = ({
     onBlur = () => {},
     type = "text",
     value,
-    fill = "outline",
+    fill,
     onChange,
     name,
     required,
     multiple,
 }: ITextInputType) => {
     return (
-        <IonItem>
-            <IonInput
-                fill={fill}
-                type={type}
-                value={value}
-                label={label}
-                labelPlacement={labelPlacement}
-                onBlur={onBlur}
-                onChange={onChange}
-                placeholder={placeholder}
-                name={name}
-                required={required}
-                multiple={multiple}
-                style={{ "--padding-start": "16px" }}
-            />
-        </IonItem>
+        <IonInput
+            fill={fill}
+            type={type}
+            value={value}
+            label={label}
+            labelPlacement={labelPlacement}
+            onBlur={onBlur}
+            onChange={onChange}
+            placeholder={placeholder}
+            name={name}
+            required={required}
+            multiple={multiple}
+        />
     );
 };

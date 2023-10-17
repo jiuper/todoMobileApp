@@ -1,9 +1,9 @@
-import { IonContent, IonPage } from "@ionic/react";
+import { GeneralPageLayout } from "../../widgets/GeneralPageLayout/GeneralPageLayout";
 
 export const People = () => {
     return (
-        <IonPage>
-            <IonContent>kek</IonContent>
-        </IonPage>
+        <GeneralPageLayout>
+            <div>People</div>
+        </GeneralPageLayout>
     );
 };
