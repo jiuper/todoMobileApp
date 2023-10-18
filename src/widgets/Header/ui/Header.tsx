@@ -2,8 +2,9 @@ import { useMemo } from "react";
 import { useLocation } from "react-router";
 import { IonIcon } from "@ionic/react";
 import cnBind from "classnames/bind";
-import { arrowBack, notificationsOutline } from "ionicons/icons";
 
+import AL from "../../../shared/assets/icons/ArrowLeft.svg";
+import NT from "../../../shared/assets/icons/notification.svg";
 import { ROUTES } from "../../../shared/const/Routes";
 import { Button } from "../../../shared/ui/Button/Button";
 
@@ -36,12 +37,12 @@ export const Header = ({
                 <div className={cx("header-toolbar")}>
                     {back && (
                         <Button className={cx("toolbar-back")} handleClick={isClose}>
-                            <IonIcon className={cx("icon")} icon={arrowBack} size="large" />
+                            <IonIcon className={cx("icon")} icon={AL} size="large" />
                         </Button>
                     )}
                     <span className={cx("toolbar__title")}>{!isOpen ? title : modalTitle}</span>
                     <Button className={cx("toolbar-notification")} handleClick={() => {}}>
-                        <IonIcon className={cx("icon")} icon={notificationsOutline} size="large" />
+                        <IonIcon className={cx("icon")} icon={NT} size="large" />
                     </Button>
                 </div>
             </div>
