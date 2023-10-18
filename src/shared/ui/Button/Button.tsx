@@ -13,9 +13,11 @@ export const Button = ({
     handleClick,
     fill = "clear",
     disabled = false,
+    forwardedRef,
 }: IButton): JSX.Element => {
     return (
         <button
+            ref={forwardedRef}
             className={cx("button", fill, className || "")}
             disabled={disabled}
             type={type ? "submit" : "button"}

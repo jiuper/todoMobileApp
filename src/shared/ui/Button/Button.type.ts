@@ -5,4 +5,5 @@ export interface IButton {
     handleClick: () => void;
     fill?: "clear" | "default" | "outline" | "solid" | undefined;
     disabled?: boolean;
+    forwardedRef?: React.MutableRefObject<HTMLButtonElement | null>;
 }
