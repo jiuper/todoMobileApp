@@ -1,35 +1,38 @@
-import { IonInput } from "@ionic/react";
+import cnBind from "classnames/bind";
 
-import type { ITextInputType } from "./TextInput.type";
+import type { ITextInput } from "./TextInput.type";
 
-import "./style.module.scss";
+import styles from "./style.module.scss";
+
+const cx = cnBind.bind(styles);
 
 export const TextInput = ({
     placeholder,
-    label = " ",
-    labelPlacement,
-    onBlur = () => {},
-    type = "text",
-    value,
-    fill,
-    onChange,
     name,
-    required,
-    multiple,
-}: ITextInputType) => {
+    className,
+    value,
+    handleChange,
+    disabled,
+    isBlur,
+    error = "",
+    type = "text",
+    maxLength,
+}: ITextInput) => {
     return (
-        <IonInput
-            fill={fill}
-            type={type}
-            value={value}
-            label={label}
-            labelPlacement={labelPlacement}
-            onBlur={onBlur}
-            onChange={onChange}
-            placeholder={placeholder}
-            name={name}
-            required={required}
-            multiple={multiple}
-        />
+        <>
+            <input
+                type={type}
+                step={0.1}
+                placeholder={placeholder}
+                className={cx("field", className, error ? "error" : "")}
+                value={value}
+                name={name}
+                disabled={disabled}
+                onBlur={isBlur}
+                onChange={handleChange}
+                maxLength={maxLength}
+            />
+            {error ? <span className={cx("input-error")}>{error}</span> : ""}
+        </>
     );
 };

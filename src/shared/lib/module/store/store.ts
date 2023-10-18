@@ -1,5 +1,6 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
+import { projectReducer } from "../../../../entitys/Project/lib/module/store";
 import { generalReducer } from "../reducers/generalReducer";
 
 export const setupStore = () => {
@@ -8,7 +9,7 @@ export const setupStore = () => {
     });
 };
 
-const rootReducer = combineReducers({ general: generalReducer });
+const rootReducer = combineReducers({ general: generalReducer, projects: projectReducer });
 
 export type RootReducer = ReturnType<typeof rootReducer>;
 export type AppStore = ReturnType<typeof setupStore>;

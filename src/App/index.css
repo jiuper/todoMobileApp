@@ -4,6 +4,7 @@
     min-height: 100vh;
     position: relative;
     background: center / cover no-repeat url("../../src/shared/assets/images/bg.png");
+    color: #000;
 }
 
 .container{

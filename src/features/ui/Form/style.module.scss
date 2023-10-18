@@ -1,24 +1,57 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  color: #000;
 
-  ion-input {
-    --padding-start: 16px ;
-    border-radius: 15px;
-    background: #fff;
-    min-height: 63px !important;
-    box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, 0.04);
-    --highlight-color-focused: none;
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
   }
 
-  ion-textarea {
-    min-height: 142px !important;
-    box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, 0.04);
-    --padding-start: 16px;
-    --padding-end: 16px;
-    border-radius: 15px;
-    background: #fff;
-    --highlight-color-focused: none;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    ion-input {
+      --padding-start: 16px;
+      border-radius: 15px;
+      background: #fff;
+      min-height: 63px !important;
+      box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, 0.04);
+      --highlight-color-focused: none;
+    }
+
+    ion-textarea {
+      min-height: 142px !important;
+      box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, 0.04);
+      --padding-start: 16px;
+      --padding-end: 16px;
+      border-radius: 15px;
+      background: #fff;
+      --highlight-color-focused: none;
+    }
   }
+
+  &__btn {
+    width: 100%;
+
+    .btn-submit {
+      width: 100%;
+      border-radius: 10px;
+      height: 52px;
+      background: #5f33e1;
+
+    }
+
+    .btn-action {
+      color: #FFF;
+      font-size: 19px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+  }
+
 }

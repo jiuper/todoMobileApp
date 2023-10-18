@@ -1,12 +1,11 @@
-export interface ITextInput {
+export interface ITextArea {
     placeholder?: string;
     name?: string;
     className?: string;
     value: string | undefined;
     disabled?: boolean;
-    type?: string;
     error?: string | null;
     maxLength?: number | undefined;
-    isBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
-    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    isBlur?: (e: React.FocusEvent<HTMLTextAreaElement>) => void;
+    handleChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
