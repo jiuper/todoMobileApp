@@ -27,12 +27,12 @@ export const TabsRouting = () => {
 
     return (
         <div className={cx("controlling")}>
-            <div className={cx("controlling-tabs")}>
+            <div className={cx("controlling__tabs")}>
                 {TabsRoutes.map((btn, i) => (
-                    <Button className={cx("controlling-tabs__tab-item")} handleClick={() => setIsIndex(i)} key={i}>
+                    <Button className={cx("controlling__tab")} handleClick={() => setIsIndex(i)} key={i}>
                         {btn.href && (
                             <Link
-                                className={cx("controlling-tabs__tab-item__link", indexBtn === i && "link__active")}
+                                className={cx("controlling__link", indexBtn === i && "controlling__link-isActive")}
                                 to={btn.href}
                             >
                                 <IonIcon icon={btn.icon} size="large" />
@@ -41,9 +41,9 @@ export const TabsRouting = () => {
                     </Button>
                 ))}
             </div>
-            <div className={cx("controlling-tab__modal")}>
-                <Button className={cx("controlling-tab__modal-btn__added")} handleClick={handleIsOpenModal}>
-                    <IonIcon className={cx("icon")} icon={add} size="large" />
+            <div className={cx("controlling__modal")}>
+                <Button className={cx("controlling__button")} handleClick={handleIsOpenModal}>
+                    <IonIcon className={cx("controlling__icon")} icon={add} size="large" />
                 </Button>
             </div>
         </div>
