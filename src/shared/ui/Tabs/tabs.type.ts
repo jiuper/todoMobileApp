@@ -1,5 +1,8 @@
-import type { TabsRouteTypes } from "../../../features/const/variebles";
-
+export interface TabsRouteTypes {
+    icon: string;
+    href?: string;
+    tab?: string;
+}
 export interface TabsType {
     tabsRoutes: TabsRouteTypes[];
 }

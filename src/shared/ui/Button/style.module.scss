@@ -7,25 +7,7 @@
     cursor: pointer;
     background-color: transparent;
     transition: background-color .6s ease;
-    &::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
-        transform-style: flat;
-        transform: translate3d(-50%, -50%, 0);
-        background: rgba(rgb(143, 143, 143), 0.1);
-        border-radius: 100%;
-        transition: width 0.1s ease, height 0.1s ease;
-    }
-    &:active {
-        &:after {
-            width: 80px;
-            height: 80px;
-        }
-    }
+
 }
 
 .clear {
