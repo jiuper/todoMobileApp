@@ -12,7 +12,6 @@ import styles from "./style.module.scss";
 const cx = cnBind.bind(styles);
 export const Tabs = ({ tabsRoutes }: TabsType) => {
     const { indexBtn, setIsIndex } = useActiveClass(0);
-    console.log(indexBtn);
 
     return (
         <div className={cx("tabs")}>
