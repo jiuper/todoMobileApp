@@ -6,8 +6,17 @@
     border-radius: 20px;
     cursor: pointer;
     background-color: transparent;
-    transition: background-color .6s ease;
+}
 
+.animate {
+    animation: pulse 1s;
+    box-shadow: 0 0 0 2em transparent;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(33, 33, 33, 0.177);
+    }
 }
 
 .clear {
