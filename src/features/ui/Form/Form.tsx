@@ -43,14 +43,26 @@ export const Form = ({ onSubmit }: { onSubmit: (date: IProjectItem) => void }) =
                         value={isDateForm.title}
                         handleChange={(e) => handleChange(e.target.value, "title")}
                         maxLength={25}
+                        placeholder="Title..."
                     />
                     <TextArea
                         value={isDateForm.description}
                         handleChange={(e) => handleChange(e.target.value, "description")}
                         maxLength={150}
+                        placeholder="Description..."
                     />
-                    <DropCalendar title="Start Date" />
-                    <DropCalendar title="End Date" />
+                    <DropCalendar
+                        type="starDate"
+                        value={isDateForm.starDate}
+                        title="Start Date"
+                        handleChange={(e) => handleChange(e, "starDate")}
+                    />
+                    <DropCalendar
+                        type="endDate"
+                        value={isDateForm.endDate}
+                        title="End Date"
+                        handleChange={(e) => handleChange(e, "endDate")}
+                    />
                 </div>
                 <div className={cx("form__btn")}>
                     <Button

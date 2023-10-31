@@ -55,12 +55,12 @@
     &__drop {
         transition: transform 0.5s;
     }
-    &__calendar {
-        position: absolute;
-        bottom: 130%;
-        right: 0;
-        z-index: 6;
-        box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, 0.4);
-        border-radius: 10px;
-    }
+}
+
+ion-datetime {
+    position: absolute;
+    bottom: 130%;
+    right: 0;
+    border-radius: 16px;
+    box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, 0.4);
 }
