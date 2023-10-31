@@ -4,7 +4,8 @@ import cnBind from "classnames/bind";
 import type { IProjectItem } from "../../../entitys/Project/type/index.type";
 import { Button } from "../../../shared/ui/Button/Button";
 import { DropDown } from "../../../shared/ui/DropDown/DropDown";
-import { DropDownDate } from "../../../shared/ui/DropDownDate/DropDownDate";
+import { DropCalendar } from "../../../shared/ui/DropDownDate/DropCalendar";
+// import { DropDownDate } from "../../../shared/ui/DropDownDate/DropDownDate";
 import { TextArea } from "../../../shared/ui/TextArea/TextArea";
 import { TextInput } from "../../../shared/ui/TextInput/TextInput";
 
@@ -48,16 +49,8 @@ export const Form = ({ onSubmit }: { onSubmit: (date: IProjectItem) => void }) =
                         handleChange={(e) => handleChange(e.target.value, "description")}
                         maxLength={150}
                     />
-                    <DropDownDate
-                        value={isDateForm.starDate}
-                        handleChange={(e) => handleChange(e.target.value, "starDate")}
-                        title="Star Date"
-                    />
-                    <DropDownDate
-                        value={isDateForm.endDate}
-                        handleChange={(e) => handleChange(e.target.value, "endDate")}
-                        title="End Date"
-                    />
+                    <DropCalendar title="Start Date" />
+                    <DropCalendar title="End Date" />
                 </div>
                 <div className={cx("form__btn")}>
                     <Button
